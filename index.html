@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="./src/css/styles.css" /> -->
+    <link rel="stylesheet" href="./src/css/mobile-styles.css" />
+    <title>Pokedex</title>
+  </head>
+  <body>
+    <main class="main">
+      <div class="wrapper">
+        <div class="main-content">
+          <div class="pokedexContainer">
+            <div class="pokedexHeader"></div>
+            <div class="pokedexContent">
+              <div class="pokedexContent-inside">
+                <div class="screen">
+                  <div class="screen-inside"></div>
+                  <div class="controls">
+                    <div class="dots">
+                      <div class="dot"></div>
+                      <div class="dot"></div>
+                    </div>
+                    <div class="icon-burger">
+                      <div class="line"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="controls-second">
+                  <div class="circle"></div>
+                  <div class="elipsis">
+                    <div class="elipse is-yellow"></div>
+                    <div class="elipse is-dark-blue"></div>
+                  </div>
+                </div>
+                <div class="pokedexControls">
+                  <div class="form-control">
+                    <form>
+                      <input
+                        placeholder="¿Quién es ese pokémon?"
+                        type="text"
+                        name="searchPokemon"
+                        aria-label="search pokemos for id or name"
+                      />
+                    </form>
+                  </div>
+                  <div class="buttons-controls">
+                    <button>a</button>
+                    <button><</button>
+                    <button>></button>
+                    <button>b</button>
+                    <span class="helper"></span>
+                  </div>
+                </div>
+                <div class="pokedexDetail">
+                  <span
+                    >Busca un pokémon para conocer todos sus
+                    características.</span
+                  >
+                </div>
+              </div>
+              <div class="pokedexContent-screen">
+                <div class="front-screen"></div>
+                <div class="back-screen">
+                  <div class="pokedexChartContent"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      const $app = document.querySelector('.pokedexContent');
+      const $card = document.querySelector('.pokedexContent-screen');
+
+      $app.addEventListener('click', function () {
+        console.log('hello');
+        $card.classList.toggle('is-active');
+      });
+    </script>
+  </body>
+</html>
