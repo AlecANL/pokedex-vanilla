@@ -5,18 +5,10 @@
   --darkness: #300f16;
 }
 
-.pokedexChartContent {
-  display: none;
-}
-.pokedexDetail {
-  display: none;
-}
-.pokedexControls {
-  display: none;
-}
 body {
   background-color: #4ba3da;
   margin: 0;
+  font-family: system-ui;
 }
 
 /* .pokedexContainer {
@@ -44,7 +36,6 @@ body {
 .pokedexContainer {
   inline-size: 100%;
   /* block-size: 200px; */
-  outline: 1px solid red;
 }
 .pokedexHeader {
   inline-size: 100%;
@@ -72,14 +63,15 @@ body {
   transform: rotateZ(0);
   right: 0px;
   block-size: 4.5px;
-  bottom: 10px;
+  bottom: 11px;
 }
 /* Pokedex Content all sections */
 .pokedexContent {
   position: relative;
   inline-size: 100%;
   max-inline-size: 24rem;
-  block-size: 17.5rem;
+  /* block-size: 17.5rem; */
+  block-size: 20rem;
   max-block-size: 34.375rem;
   perspective: 1400px;
 }
@@ -123,6 +115,161 @@ body {
   padding-inline-end: 1.5rem;
   box-sizing: border-box;
 }
+
+/* Screen into first screen to pokedex */
+/* Allow watch every single pokemon */
+.screen {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  inline-size: 100%;
+  block-size: 229px;
+  background-color: var(--just-white);
+  margin-block-start: 1rem;
+  padding-inline-start: 1.5rem;
+  padding-inline-end: 1.5rem;
+  padding-block-start: 1.5rem;
+  box-sizing: border-box;
+  border-radius: 0.5rem;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 11% 100%, 0 85%);
+}
+.screen-inside {
+  inline-size: 100%;
+  block-size: 10rem;
+  background-color: #8db9dc;
+  border-radius: 0.5rem;
+}
+.controls {
+  display: flex;
+  inline-size: 100%;
+}
+.dots {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}
+.dot {
+  inline-size: 1rem;
+  block-size: 1rem;
+  background-color: var(--dark-red);
+  border-radius: 50%;
+  margin-inline-end: 1rem;
+}
+.icon-burger {
+  inline-size: 1.375rem;
+  block-size: 0.875rem;
+  background-color: red;
+}
+
+/* Input in user insert a id o name for only one pokemon */
+.pokedexControls {
+  display: flex;
+  gap: 2rem;
+  margin-block-start: 1.5rem;
+  justify-content: space-between;
+  align-items: center;
+}
+.form-control {
+  inline-size: 100%;
+}
+.form-control form input[type='text'] {
+  inline-size: 100%;
+  box-sizing: border-box;
+  padding-block: 0.6rem;
+  border: none;
+  border-radius: 0.25rem;
+  padding-inline: 0.5rem;
+}
+.buttons-controls {
+  position: relative;
+  display: none;
+  grid-template-columns: repeat(3, 30px);
+  grid-template-rows: repeat(3, 30px);
+}
+.buttons-controls button {
+  border: none;
+  background-color: var(--dark-blue);
+  color: var(--just-white);
+  cursor: pointer;
+}
+.buttons-controls button:active {
+  transform: scale(0.98);
+}
+.buttons-controls button:nth-child(1) {
+  grid-column: 2 / 3;
+}
+.buttons-controls button:nth-child(2) {
+  grid-column: 3 / 4;
+  grid-row: 2 / 3;
+}
+.buttons-controls button:nth-child(3) {
+  grid-column: 2 / 3;
+  grid-row: 3 / 4;
+}
+.buttons-controls button:nth-child(4) {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+}
+.helper {
+  background-color: var(--dark-blue);
+  grid-column: 2 / 3;
+  grid-row: 2 /3;
+}
+
+/* Display details by pokemon and her grapics */
+.pokedexDetail {
+  display: none;
+  background-color: #51ae5f;
+  border: 1px solid #000;
+  border-radius: 0.5rem;
+  padding-inline: 0.5rem;
+  padding-block: 0.5rem;
+  block-size: 6rem;
+  margin-block-start: 1rem;
+}
+.pokedexChartContent {
+  /* block-size: 31.0625rem; */
+  block-size: 100%;
+  inline-size: 100%;
+  background-color: var(--dark-blue);
+  border-radius: 0.5rem;
+}
+
+/* Display seconds controls ask me i don't know used ? 😕*/
+.controls-second {
+  display: none;
+  margin-block-start: 1rem;
+  align-items: center;
+  gap: 2rem;
+}
+.elipsis {
+  display: flex;
+  gap: 1rem;
+}
+.circle {
+  inline-size: 3rem;
+  block-size: 3rem;
+  background-color: var(--dark-blue);
+  border-radius: 50%;
+  box-shadow: 3px 4px 5px 0px rgba(0, 0, 0, 0.38);
+}
+.elipse {
+  inline-size: 1.875rem;
+  block-size: 0.5rem;
+}
+
+.elipse.is-yellow {
+  background-color: #fecb2f;
+  border-radius: 0.25rem;
+  box-shadow: 3px 4px 5px 0px rgba(210, 170, 51, 0.911);
+}
+.elipse.is-dark-blue {
+  background-color: var(--dark-blue);
+  box-shadow: 3px 4px 5px 0px rgba(22, 51, 85, 0.871);
+  border-radius: 0.25rem;
+}
+
 @media screen and (min-width: 1024px) {
   .pokedexContent-screen.is-active {
     transform: rotateY(180deg);
@@ -137,5 +284,20 @@ body {
     inline-size: 24em;
     block-size: 34.375rem;
     background-color: blue;
+  }
+  .pokedexControls {
+    margin: 0;
+  }
+  .buttons-controls {
+    display: grid;
+  }
+  .pokedexDetail {
+    display: block;
+  }
+  .controls-second {
+    display: flex;
+  }
+  .pokedexHeader::after {
+    bottom: 12px;
   }
 }
