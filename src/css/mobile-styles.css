@@ -139,6 +139,7 @@ body {
   block-size: 10rem;
   background-color: #8db9dc;
   border-radius: 0.5rem;
+  position: relative;
 }
 .controls {
   display: flex;
@@ -235,8 +236,17 @@ body {
   background-color: var(--dark-blue);
   /* background-color: white; */
   border-radius: 0.5rem;
+  position: relative;
 }
 
+#radar-chart {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  inline-size: 15.625rem !important;
+  block-size: 15.625rem !important;
+  transform: translate(-50%, -50%);
+}
 /* Display seconds controls ask me i don't know used ? 😕*/
 .controls-second {
   display: none;
@@ -308,8 +318,7 @@ body {
   position: relative;
   width: 80px;
   left: 50%;
-  top: 50%;
-
+  top: -50%;
   transform: translate(-50%, -50%);
   height: 80px;
 }
