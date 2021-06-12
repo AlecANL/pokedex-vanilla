@@ -8,7 +8,7 @@ const $radarChart = document.getElementById('radar-chart').getContext('2d');
 const $chartContent = document.getElementById('chart-content');
 
 const API = 'https://pokeapi.co/api/v2/pokemon';
-var data = {
+const fakeData = {
   labels: ['LABEL1', 'LABEL5', 'dsdasd', 'dasd', 'dasdas'],
   datasets: [
     {
@@ -20,30 +20,30 @@ var data = {
   ],
 };
 
-// const myChart = new Chart($radarChart, {
-//   type: 'radar',
-//   data,
-//   options: {
-//     scales: {
-//       r: {
-//         grid: {
-//           color: '#fff',
-//         },
-//         angleLines: {
-//           color: '#fff',
-//         },
-//         pointLabels: {
-//           color: '#fff',
-//         },
-//         ticks: {
-//           color: '#fff',
-//           backdropColor: '#000',
-//         },
-//       },
-//     },
-//   },
-// });
-// console.log(myChart);
+const myChart = new Chart($radarChart, {
+  type: 'radar',
+  data: fakeData,
+  options: {
+    scales: {
+      r: {
+        grid: {
+          color: '#fff',
+        },
+        angleLines: {
+          color: '#fff',
+        },
+        pointLabels: {
+          color: '#fff',
+        },
+        ticks: {
+          color: '#fff',
+          backdropColor: '#000',
+        },
+      },
+    },
+  },
+});
+console.log(fakeData);
 
 function handleErrorFetchPokemon(response, message = '') {
   if (!response) {
@@ -78,7 +78,7 @@ function baseConfigchart(stats) {
 
 function renderChart($container, type, config, options, labels) {
   // $chartContent.innerHTML = '';
-  return new Chart($container, {
+  new Chart($container, {
     type,
     data: {
       labels,
@@ -89,13 +89,10 @@ function renderChart($container, type, config, options, labels) {
 }
 
 function buildPokemonChart(pokemon) {
-  const something = {
-    stat: pokemon.stats.map(stat => stat.base_stat),
-  };
-  console.log(something);
   const { name } = pokemon;
-  const { getLabels } = baseConfigchart(pokemon.stats);
+  const { getData, getLabels } = baseConfigchart(pokemon.stats);
   const color = getPokemonColor(pokemon.type[0]);
+  console.log(getData);
 
   const options = {
     scales: {
@@ -125,22 +122,27 @@ function buildPokemonChart(pokemon) {
   //     },
 
   const chartConfig = {
-    data: pokemon.stats.map(stat => stat.base_stat),
+    data: getData,
     label: name,
     backgroundColor: color,
-    pointBackgroundColor: '#34b44a',
+    pointBackgroundColor: 'red',
   };
 
-  const myChart = renderChart(
-    $radarChart,
-    'radar',
-    chartConfig,
-    options,
-    getLabels
-  );
-  // myChart.update();
+  // console.log(chartConfig);
+  // const myChart = renderChart(
+  //   $radarChart,
+  //   'radar',
+  //   chartConfig,
+  //   options,
+  //   getLabels
+  // );
+  fakeData.datasets[0] = chartConfig;
+  fakeData.labels = getLabels;
+  console.log(fakeData);
+  myChart.update();
+  console.log('hello');
   // myChart.destroy();
-  console.log(myChart);
+  // console.log(chartConfig);
 }
 
 function getPokemonColor({ type: { name } }) {
