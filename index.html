@@ -19,10 +19,16 @@
                 <div class="screen">
                   <div class="screen-inside">
                     <div class="pokemon" id="pokemon"></div>
-                    <div class="lds-ripple" id="loader">
+                    <img
+                      class="loader"
+                      id="loader"
+                      src="./src/images/pokeball.gif"
+                      alt="gif pokeball"
+                    />
+                    <!-- <div class="lds-ripple" id="loader">
                       <div></div>
                       <div></div>
-                    </div>
+                    </div> -->
                   </div>
                   <div class="controls">
                     <div class="dots">
@@ -72,7 +78,13 @@
                 <div class="front-screen"></div>
                 <div class="back-screen">
                   <div class="pokedexChartContent" id="chart-content">
-                    <canvas id="radar-chart"></canvas>
+                    <div class="chart-content" id="content-chart">
+                      <canvas
+                        width="250"
+                        height="250"
+                        id="radar-chart"
+                      ></canvas>
+                    </div>
                   </div>
                 </div>
               </div>

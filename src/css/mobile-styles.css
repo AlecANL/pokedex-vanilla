@@ -3,6 +3,7 @@
   --dark-blue: #163355;
   --just-white: #fff;
   --darkness: #300f16;
+  --screenInside: #8db9dc;
 }
 
 body {
@@ -137,7 +138,7 @@ body {
 .screen-inside {
   inline-size: 100%;
   block-size: 10rem;
-  background-color: #8db9dc;
+  background-color: var(--screenInside);
   border-radius: 0.5rem;
   position: relative;
 }
@@ -237,6 +238,8 @@ body {
   /* background-color: white; */
   border-radius: 0.5rem;
   position: relative;
+  padding-inline: 1.5rem;
+  box-sizing: border-box;
 }
 
 #radar-chart {
@@ -311,6 +314,10 @@ body {
   .pokedexHeader::after {
     bottom: 12px;
   }
+  #radar-chart {
+    inline-size: 18rem !important;
+    block-size: 18rem !important;
+  }
 }
 
 .lds-ripple {
@@ -347,6 +354,7 @@ body {
     width: 72px;
     height: 72px;
     opacity: 0;
+    /* color: rgba(230, 224, 212, 0.5); */
   }
 }
 
@@ -363,4 +371,34 @@ img {
   align-items: center;
   inline-size: 100%;
   block-size: 100%;
+}
+.loader {
+  position: absolute;
+  inline-size: 100%;
+  top: 0;
+}
+
+.is-shakeAnimation {
+  animation: shakeAnimation 0.4s 1 linear;
+}
+
+@keyframes shakeAnimation {
+  0% {
+    transform: translate(30px);
+  }
+  20% {
+    transform: translate(-30px);
+  }
+  40% {
+    transform: translate(15px);
+  }
+  60% {
+    transform: translate(-15px);
+  }
+  80% {
+    transform: translate(8px);
+  }
+  100% {
+    transform: translate(0px);
+  }
 }
