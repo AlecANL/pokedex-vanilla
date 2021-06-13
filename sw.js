@@ -1,11 +1,6 @@
-const cacheName = 'app-v1';
+const cacheName = 'app-v2';
 
-const files = [
-  '/',
-  '/index.html',
-  '/src/css/mobile-styles.css',
-  '/src/js/app.js',
-];
+const files = ['/', './index.html'];
 
 self.addEventListener('install', e => {
   console.log('installed');
