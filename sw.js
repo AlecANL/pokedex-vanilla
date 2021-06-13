@@ -1,12 +1,12 @@
-const cacheName = 'app-v2';
+const cacheName = 'app-v1';
 
-const files = ['/', './index.html'];
+const files = ['/index.html'];
 
 self.addEventListener('install', e => {
   console.log('installed');
   e.waitUntil(
     caches.open(cacheName).then(cache => {
-      console.log('cached');
+      console.log(cache);
       cache.addAll(files);
     })
   );
