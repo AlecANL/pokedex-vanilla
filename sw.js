@@ -1,4 +1,4 @@
-const cacheName = 'app-v1';
+const cacheName = 'app-v0';
 
 const files = ['/index.html'];
 
@@ -32,3 +32,4 @@ self.addEventListener('fetch', e => {
     })
   );
 });
+console.log('change to version 0');
