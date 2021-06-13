@@ -2,9 +2,9 @@ const cacheName = 'app-v1';
 
 const files = [
   '/',
-  './index.html',
-  './src/css/mobile-styles.css',
-  './src/js/app.js',
+  '/index.html',
+  '/src/css/mobile-styles.css',
+  '/src/js/app.js',
 ];
 
 self.addEventListener('install', e => {
