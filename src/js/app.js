@@ -31,13 +31,13 @@ $pokeForm.addEventListener('submit', handleSubmitForm);
 $app.addEventListener('click', function () {
   $card.classList.add('is-active');
 });
+console.log(`sw.js`);
 
 $nextPokemon.addEventListener('click', getNextPokemon);
 $prevPokemon.addEventListener('click', getPreviusPokemon);
-
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker
-    .register('https://alecanl.github.io/pokedex-vanilla/sw.js')
+    .register(`sw.js`, { scope: `${location.host}${location.pathname}` })
     .then(register => console.log(`installed succesfully: ${register}`))
     .catch(error => console.warn(`whoops: ${error}`));
 } else {
