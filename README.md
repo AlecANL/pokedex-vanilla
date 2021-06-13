@@ -8,7 +8,10 @@ Atrapa todos los pokemones construyendo tu propia Pokédex.
 
 ## Desktop
 
-<img width="400px"  src="https://github.com/no-te-rindas/imagenes/blob/main/Readmes/pokedex/pokedex.png?raw=true" />
+<div align="center">
+<img width="400px"  src="https://github.com/AlecANL/pokedex-vanilla/blob/main/src/images/desing.png" />
+
+</div>
 
 ## Disclaimer
 
@@ -54,6 +57,14 @@ Requerimientos
 - Mándalo a revisión desde tu [perfil](https://leonidasesteban.com/estudiante)
 
 ¿Quieres ayuda con PWA? [Link a la documentación](https://web.dev/progressive-web-apps/)
+
+## 📌 Stack
+
+HTML | CSS | JS
+
+## 🌟 Autor
+
+- **<Alexei>** - [@AlecANL](https://github.com/alecanl)
 
 ## Créditos
 
