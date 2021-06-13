@@ -13,7 +13,16 @@
       <div class="wrapper">
         <div class="main-content">
           <div class="pokedexContainer">
-            <div class="pokedexHeader"></div>
+            <div class="pokedexHeader">
+              <div class="dots-content">
+                <div class="b-dot"></div>
+                <div class="sub-dots">
+                  <div class="dot"></div>
+                  <div class="dot"></div>
+                  <div class="dot"></div>
+                </div>
+              </div>
+            </div>
             <div class="pokedexContent">
               <div class="pokedexContent-inside">
                 <div class="screen">
@@ -35,9 +44,13 @@
                       <div class="dot"></div>
                       <div class="dot"></div>
                     </div>
-                    <div class="icon-burger">
+                    <img
+                      src="./src/images/burger-menu.svg"
+                      alt="icon hamburger"
+                    />
+                    <!-- <div class="icon-burger">
                       <div class="line"></div>
-                    </div>
+                    </div> -->
                   </div>
                 </div>
                 <div class="controls-second">
@@ -52,7 +65,7 @@
                     <form id="form-pokemon">
                       <input
                         id="search-pokemon"
-                        placeholder="¿Quién es ese pokémon?"
+                        placeholder="¿Who is that Pokémon?"
                         type="text"
                         name="searchPokemon"
                         aria-label="search pokemos for id or name"
@@ -60,18 +73,37 @@
                     </form>
                   </div>
                   <div class="buttons-controls">
-                    <button>a</button>
-                    <button><</button>
-                    <button>></button>
-                    <button>b</button>
+                    <button>
+                      <img
+                        src="./src/images/arrow-up.svg"
+                        alt="arrow up icon"
+                      />
+                    </button>
+                    <button id="next">
+                      <img
+                        src="./src/images/arrow-right.svg"
+                        alt="arrow right icon"
+                      />
+                    </button>
+                    <button>
+                      <img
+                        src="./src/images/arrow-down.svg"
+                        alt="arrow down icon"
+                      />
+                    </button>
+                    <button id="prev">
+                      <img
+                        src="./src/images/arrow-left.svg"
+                        alt="arrow left icon"
+                      />
+                    </button>
                     <span class="helper"></span>
                   </div>
                 </div>
                 <div class="pokedexDetail">
-                  <span
-                    >Busca un pokémon para conocer todos sus
-                    características.</span
-                  >
+                  <p id="description">
+                    Search a Pokémon to know your characterist
+                  </p>
                 </div>
               </div>
               <div class="pokedexContent-screen is-active">

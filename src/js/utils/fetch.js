@@ -16,8 +16,21 @@ export async function getPokemon(query) {
       id: pokemon?.id,
       name: pokemon?.name,
       type: pokemon?.types,
-      image: `https://pokeres.bastionbot.org/images/pokemon/${pokemon?.id}.png`,
+      image: pokemon?.sprites.other['official-artwork'].front_default,
+      // helper image
+      // `https://pokeres.bastionbot.org/images/pokemon/${pokemon?.id}.png`
       stats: pokemon?.stats,
     }))
+    .catch(error => console.log(error));
+}
+
+export async function getPokemonDescription(id, language) {
+  return fetchPokemon('pokemon-species', id)
+    .then(handleFetchError)
+    .then(description =>
+      description['flavor_text_entries'].filter(
+        text => text.language.name === language
+      )
+    )
     .catch(error => console.log(error));
 }

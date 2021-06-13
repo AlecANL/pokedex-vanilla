@@ -50,8 +50,6 @@ const myChart = new Chart($radarChart, {
   options: options,
 });
 
-console.log(myChart);
-
 function baseConfigchart(stats) {
   const getData = stats.reduce((dataList, currentValue) => {
     dataList.push(currentValue.base_stat);
@@ -73,7 +71,6 @@ function baseConfigchart(stats) {
 }
 
 export function buildPokemonChart(pokemon) {
-  console.log(chartData);
   const { name, type } = pokemon;
   const { getData, getLabels } = baseConfigchart(pokemon.stats);
   const color = getPokemonColor(type);

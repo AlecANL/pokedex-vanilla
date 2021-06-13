@@ -33,6 +33,7 @@ export function getPokemonColor(type, colorPosition = 0) {
     flying: ['rgba(245, 245, 245, .5)', '#f5f5f5'],
     fighting: ['rgba(230, 224, 212, .5)', '#e6e0d4'],
     normal: ['rgba(245, 245, 245, .5)', '#f5f5f5'],
+    ice: ['rgba(151, 179, 230, .5)', '#97b3e6'],
   };
   return colors[name][colorPosition];
 }

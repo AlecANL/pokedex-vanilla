@@ -1,14 +1,17 @@
-import { searchQuery } from './utils/search.js';
+import {
+  searchQuery,
+  getNextPokemon,
+  getPreviusPokemon,
+} from './utils/search.js';
 
 const $app = document.querySelector('.pokedexContent');
 const $card = document.querySelector('.pokedexContent-screen');
 const $pokeForm = document.getElementById('form-pokemon');
 const $inputPokemon = document.getElementById('search-pokemon');
 const $chartContainer = document.getElementById('content-chart');
+const $nextPokemon = document.getElementById('next');
+const $prevPokemon = document.getElementById('prev');
 $chartContainer.style.visibility = 'hidden';
-
-// function getNextPokemon() {}
-// function getPreviusPokemon(id) {}
 
 function handleSubmitForm(e) {
   e.preventDefault();
@@ -28,3 +31,6 @@ $pokeForm.addEventListener('submit', handleSubmitForm);
 $app.addEventListener('click', function () {
   $card.classList.add('is-active');
 });
+
+$nextPokemon.addEventListener('click', getNextPokemon);
+$prevPokemon.addEventListener('click', getPreviusPokemon);

@@ -5,12 +5,14 @@ import { buildPokemon, render } from './render.js';
 const $inputPokemon = document.getElementById('search-pokemon');
 const $pokemon = document.getElementById('pokemon');
 
-// const currentPokemon = 1;
+let currentPokemon = 1;
+
 const maxPokemon = 898;
 const minPokemon = 1;
 
 function searchById(id) {
   const parseId = Math.floor(+id);
+  currentPokemon = parseId;
   if (parseId > maxPokemon || parseId < minPokemon) {
     $inputPokemon.classList.add('is-shakeAnimation');
     $inputPokemon.addEventListener('animationend', () => {
@@ -30,7 +32,8 @@ function searchById(id) {
 }
 
 function searchByName(name) {
-  getPokemon(name)
+  const parserName = name.toLowerCase().trim();
+  getPokemon(parserName)
     .then(handleFetchError)
     .then(pokemon => render(pokemon, buildPokemon, $pokemon))
     .catch(
@@ -41,6 +44,13 @@ function searchByName(name) {
     );
 }
 
+function searchPokemonByButtons(currentId = 1) {
+  getPokemon(currentId)
+    .then(handleFetchError)
+    .then(pokemon => render(pokemon, buildPokemon, $pokemon))
+    .catch(error => new Error(`whoops try again error: ${error}`));
+}
+
 export function searchQuery(query) {
   if (isNaN(query)) {
     searchByName(query);
@@ -48,3 +58,20 @@ export function searchQuery(query) {
   }
   searchById(query);
 }
+
+export function getNextPokemon() {
+  currentPokemon++;
+  if (currentPokemon > 898) {
+    currentPokemon = 1;
+  }
+  searchPokemonByButtons(currentPokemon);
+}
+
+export function getPreviusPokemon() {
+  if (currentPokemon < 1) {
+    currentPokemon = 898;
+  }
+  currentPokemon--;
+  searchPokemonByButtons(currentPokemon);
+}
+// function getPreviusPokemon(id) {}
