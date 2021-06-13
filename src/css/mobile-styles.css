@@ -140,11 +140,10 @@ body {
   .controls-second {
     display: flex;
   }
-}
-
-.back-screen {
-  box-shadow: inset 36px 0px 0px -30px #ba111f;
-  /* box-shadow: inset 0px 12px 0px -7px #ba111f; */
+  .back-screen {
+    box-shadow: inset 36px 0px 0px -30px #ba111f;
+    /* box-shadow: inset 0px 12px 0px -7px #ba111f; */
+  }
 }
 
 img {
