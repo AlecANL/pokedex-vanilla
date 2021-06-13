@@ -37,7 +37,7 @@ $prevPokemon.addEventListener('click', getPreviusPokemon);
 
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker
-    .register('/sw.js')
+    .register('sw.js', { scope: 'https://alecanl.github.io/pokedex-vanilla/' })
     .then(register => console.log(`installed succesfully: ${register}`))
     .catch(error => console.warn(`whoops: ${error}`));
 } else {
