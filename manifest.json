@@ -1,0 +1,46 @@
+{
+  "name": "Pokedex",
+  "short_name": "Pokedex",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#4ba3da",
+  "theme_color": "#4ba3da",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/src/icons/favicon16.png",
+      "type": "image/png",
+      "sizes": "16x16"
+    },
+    {
+      "src": "src/icons/favicon-32x-32.png",
+      "type": "image/png",
+      "sizes": "32x32"
+    },
+    {
+      "src": "src/icons/tile70x70.png",
+      "type": "image/png",
+      "sizes": "70x70"
+    },
+    {
+      "src": "src/icons/tile150x150.png",
+      "type": "image/png",
+      "sizes": "150x150"
+    },
+    {
+      "src": "src/icons/pwa-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "src/icons/tile310*310.png",
+      "type": "image/png",
+      "sizes": "310x310"
+    },
+    {
+      "src": "src/icons/pwa512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}

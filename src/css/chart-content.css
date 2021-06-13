@@ -1,0 +1,20 @@
+.pokedexChartContent {
+  /* block-size: 31.0625rem; */
+  block-size: 100%;
+  inline-size: 100%;
+  background-color: var(--dark-blue);
+  /* background-color: white; */
+  border-radius: 0.5rem;
+  position: relative;
+  padding-inline: 1.5rem;
+  box-sizing: border-box;
+}
+
+#radar-chart {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  inline-size: 18rem !important;
+  block-size: 18rem !important;
+  transform: translate(-50%, -50%);
+}

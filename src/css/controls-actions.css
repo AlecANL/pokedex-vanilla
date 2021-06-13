@@ -1,0 +1,66 @@
+.pokedexControls {
+  /* display: flex; */
+  gap: 2rem;
+  margin-block-start: 1.5rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form-control {
+  inline-size: 100%;
+}
+.form-control form input[type='text'] {
+  inline-size: 100%;
+  box-sizing: border-box;
+  padding-block: 0.6rem;
+  border: none;
+  border-radius: 0.25rem;
+  padding-inline: 0.5rem;
+}
+.buttons-controls {
+  position: relative;
+  display: flex;
+  margin-top: 1rem;
+  gap: 1rem;
+  justify-content: center;
+  /* display: none; */
+  /* grid-template-columns: repeat(3, 30px); */
+  /* grid-template-rows: repeat(3, 30px); */
+}
+.buttons-controls button {
+  border: none;
+  padding-inline-start: 1rem;
+  padding-inline-end: 1rem;
+  padding-block-start: 0.5rem;
+  padding-block-end: 0.5rem;
+  background-color: var(--dark-blue);
+  color: var(--just-white);
+  cursor: pointer;
+  border-radius: 0.25rem;
+}
+.buttons-controls button:active {
+  transform: scale(0.98);
+}
+.buttons-controls button:nth-child(1) {
+  display: none;
+  grid-column: 2 / 3;
+}
+.buttons-controls button:nth-child(2) {
+  order: 1;
+  grid-column: 3 / 4;
+  grid-row: 2 / 3;
+}
+.buttons-controls button:nth-child(3) {
+  display: none;
+  grid-column: 2 / 3;
+  grid-row: 3 / 4;
+}
+.buttons-controls button:nth-child(4) {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+}
+.helper {
+  background-color: var(--dark-blue);
+  grid-column: 2 / 3;
+  grid-row: 2 /3;
+}

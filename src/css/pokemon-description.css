@@ -1,0 +1,13 @@
+.pokedexDetail {
+  display: none;
+  background-color: #51ae5f;
+  border: 1px solid #000;
+  border-radius: 0.5rem;
+  padding-inline: 0.5rem;
+  padding-block: 0.5rem;
+  block-size: 6rem;
+  margin-block-start: 1rem;
+}
+.pokedexDetail p {
+  margin: 0;
+}

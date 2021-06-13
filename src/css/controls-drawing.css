@@ -1,0 +1,32 @@
+.controls-second {
+  display: none;
+  margin-block-start: 1rem;
+  align-items: center;
+  gap: 2rem;
+}
+.elipsis {
+  display: flex;
+  gap: 1rem;
+}
+.circle {
+  inline-size: 3rem;
+  block-size: 3rem;
+  background-color: var(--dark-blue);
+  border-radius: 50%;
+  box-shadow: 3px 4px 5px 0px rgba(0, 0, 0, 0.38);
+}
+.elipse {
+  inline-size: 1.875rem;
+  block-size: 0.5rem;
+}
+
+.elipse.is-yellow {
+  background-color: #fecb2f;
+  border-radius: 0.25rem;
+  box-shadow: 3px 4px 5px 0px rgba(210, 170, 51, 0.911);
+}
+.elipse.is-dark-blue {
+  background-color: var(--dark-blue);
+  box-shadow: 3px 4px 5px 0px rgba(22, 51, 85, 0.871);
+  border-radius: 0.25rem;
+}
